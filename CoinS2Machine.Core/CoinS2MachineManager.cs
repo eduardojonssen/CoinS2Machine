@@ -1,4 +1,5 @@
 ﻿using CoinS2Machine.Core.DataContracts;
+using CoinS2Machine.Core.Processors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,44 +9,64 @@ using System.Threading.Tasks;
 namespace CoinS2Machine.Core {
     public class CoinS2MachineManager {
 
-        public List<Coin> CoinList { get; set; }
-
-        public CoinS2MachineManager() {
-            this.CoinList = new List<Coin>();
-
-            this.CoinList.Add(new Coin(100, "1 real"));
-            this.CoinList.Add(new Coin(50, "50 centavos"));
-            this.CoinList.Add(new Coin(25, "25 centavos"));
-            this.CoinList.Add(new Coin(10, "10 centavos"));
-            this.CoinList.Add(new Coin(5, "5 centavos"));
-            this.CoinList.Add(new Coin(1, "1 centavo"));
-        }
+        public CoinS2MachineManager() { }
 
         public CalculateChangeResponse CalculateChange(CalculateChangeRequest calculateChangeRequest) {
 
             CalculateChangeResponse calculateChangeResponse = new CalculateChangeResponse();
 
-            if (calculateChangeRequest.IsValid == false) {
+            try {
 
-                calculateChangeResponse.ErrorList = calculateChangeRequest.ValidationErrorList;
-                return calculateChangeResponse;
+                if (calculateChangeRequest.IsValid == false) {
+                    calculateChangeResponse.OperationReportList = calculateChangeRequest.OperationReportList;
+                    return calculateChangeResponse;
+                }
+
+                // Obtém o valor total do troco a ser retornado.
+                long actualChangeResult = calculateChangeRequest.PaidAmount - calculateChangeRequest.ProductAmount;
+
+                long remainingChangeAmount = actualChangeResult;
+
+                while (remainingChangeAmount > 0) {
+
+                    // TODO: Implementar lógica.
+                    AbstractProcessor processor = ProcessorFactory.Create(remainingChangeAmount);
+
+                    if (processor == null) {
+                        OperationReport operationReport = new OperationReport();
+
+                        operationReport.FieldName = null;
+                        operationReport.Message = "Valor não suportado. Por favor, tente novamente mais tarde.";
+                        calculateChangeResponse.OperationReportList.Add(operationReport);
+                        return calculateChangeResponse;
+                    }
+
+                    Dictionary<long, long> calculateResult = processor.Calculate(remainingChangeAmount);
+
+                    if (calculateResult.Any() == true) {
+
+                        remainingChangeAmount -= calculateResult.Sum(c => c.Key * c.Value);
+
+                        foreach (KeyValuePair<long, long> item in calculateResult) {
+                            calculateChangeResponse.CoinDictionary.Add(new Cash(item.Value, item.Key.ToString(), processor.CashType), item.Value);
+                        }
+                    }
+
+                }
+
+                calculateChangeResponse.ChangeAmount = actualChangeResult;
+
             }
+            catch (Exception ex) {
 
-            long result = calculateChangeRequest.PaidAmount - calculateChangeRequest.ProductAmount;
+                // TODO: Log da exceção.
 
-            calculateChangeResponse.ChangeAmount = result;
+                OperationReport operationReport = new OperationReport();
 
-            this.CoinList.OrderByDescending(c => c.CoinValue);
+                operationReport.FieldName = null;
+                operationReport.Message = "Não foi possível processar sua requisição. Por favor, tente novamente mais tarde.";
 
-            foreach (Coin item in this.CoinList) {
-
-                long change = result / item.CoinValue;
-                long rest = result % item.CoinValue;
-
-                if (change > 0) { calculateChangeResponse.CoinDictionary.Add(item, change); }
-
-                if (rest == 0) { break; }
-                else { result = rest; }
+                calculateChangeResponse.OperationReportList.Add(operationReport);
             }
 
             return calculateChangeResponse;

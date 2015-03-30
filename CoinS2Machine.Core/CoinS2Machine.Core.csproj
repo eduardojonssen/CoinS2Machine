@@ -40,13 +40,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContracts\AbstractRequest.cs" />
-    <Compile Include="DataContracts\Coin.cs" />
+    <Compile Include="DataContracts\Cash.cs" />
     <Compile Include="CoinS2MachineManager.cs" />
     <Compile Include="DataContracts\CalculateChangeRequest.cs" />
     <Compile Include="DataContracts\CalculateChangeResponse.cs" />
+    <Compile Include="DataContracts\CashType.cs" />
+    <Compile Include="DataContracts\OperationReport.cs" />
     <Compile Include="OperationResult.cs" />
+    <Compile Include="Processors\AbstractProcessor.cs" />
+    <Compile Include="Processors\BillProcessor.cs" />
+    <Compile Include="Processors\CoinProcessor.cs" />
+    <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

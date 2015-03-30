@@ -17,16 +17,18 @@ namespace CoinS2Machine.Core.DataContracts {
         protected override void Validate() {
 
             if (this.ProductAmount <= 0) {
-                this.ValidationErrorList.Add("Product amount must be greater than zero.");
+                this.AddOperationReport("ProductAmount", "Product amount must be greater than zero.");
             }
 
             if (this.PaidAmount <= 0) {
-                this.ValidationErrorList.Add("Paid amount must be greater than zero.");
+                this.AddOperationReport("PaidAmount", "Paid amount must be greater than zero.");
             }
 
             if (this.PaidAmount < this.ProductAmount) {
-                this.ValidationErrorList.Add("Paid amount must be greater or equals than the product amount.");
+                this.AddOperationReport("PaidAmount", "Paid amount must be greater or equals than the product amount.");
             }
+
+
         }
     }
 }

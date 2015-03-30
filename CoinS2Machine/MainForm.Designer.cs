@@ -72,7 +72,7 @@
             this.UxTxbResult.Location = new System.Drawing.Point(146, 117);
             this.UxTxbResult.Multiline = true;
             this.UxTxbResult.Name = "UxTxbResult";
-            this.UxTxbResult.Size = new System.Drawing.Size(348, 113);
+            this.UxTxbResult.Size = new System.Drawing.Size(898, 430);
             this.UxTxbResult.TabIndex = 6;
             // 
             // label3
@@ -99,7 +99,7 @@
             this.AcceptButton = this.UxBtnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 247);
+            this.ClientSize = new System.Drawing.Size(1061, 564);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.UxTxbResult);
             this.Controls.Add(this.label2);

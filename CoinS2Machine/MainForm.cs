@@ -25,6 +25,8 @@ namespace CoinS2Machine {
 
         private void CalculateChange() {
 
+            this.UxTxbResult.Clear();
+
             long paidAmount = Convert.ToInt64(this.UxTxbPaidAmount.Text);
             long productAmount = Convert.ToInt64(this.UxTxbProductAmount.Text);
 
@@ -37,15 +39,19 @@ namespace CoinS2Machine {
 
             CalculateChangeResponse response = coinS2MachineManager.CalculateChange(request);
 
-            if (response.ErrorList.Any() == true) {
+            if (response.OperationReportList.Any() == true) {
 
-                this.UxTxbResult.Text = string.Join(Environment.NewLine, response.ErrorList);
+                foreach (OperationReport operationReport in response.OperationReportList) {
+                    this.UxTxbResult.Text += string.Concat(Environment.NewLine, "FieldName: ", operationReport.FieldName, " - ", operationReport.Message);
+                }
             }
             else {
 
                 this.UxTxbResult.Text = String.Format("Troco total: {0}",response.ChangeAmount);
-                foreach (KeyValuePair<Coin, long> item in response.CoinDictionary) {
-                    this.UxTxbResult.Text += String.Concat(Environment.NewLine , "Moeda(s) de " , item.Key.CoinName, ": " , item.Value);                  
+
+                foreach (KeyValuePair<Cash, long> item in response.CoinDictionary) {
+                    string cashType = item.Key.CashType.ToString();
+                    this.UxTxbResult.Text += String.Concat(Environment.NewLine, cashType, " ", item.Key.Name, ": " , item.Value);                  
                 }
             }
         }

@@ -10,14 +10,14 @@ namespace CoinS2Machine.Core.DataContracts {
 
         public CalculateChangeResponse() {
 
-            this.CoinDictionary = new Dictionary<Coin, long>();
-            this.ErrorList = new List<string>();
+            this.CoinDictionary = new Dictionary<Cash, long>();
+            this.OperationReportList = new List<OperationReport>();
         }
 
-        public List<string> ErrorList { get; set; }
+        public List<OperationReport> OperationReportList { get; set; }
 
         public Nullable<long> ChangeAmount { get; set; }
 
-        public Dictionary<Coin, long> CoinDictionary { get; set; }
+        public Dictionary<Cash, long> CoinDictionary { get; set; }
     }
 }
