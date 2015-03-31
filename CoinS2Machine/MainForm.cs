@@ -12,8 +12,7 @@ using System.Windows.Forms;
 
 namespace CoinS2Machine {
     public partial class MainForm : Form {
-
-
+        
         public MainForm() {
             InitializeComponent();
         }
@@ -49,9 +48,9 @@ namespace CoinS2Machine {
 
                 this.UxTxbResult.Text = String.Format("Troco total: {0}",response.ChangeAmount);
 
-                foreach (KeyValuePair<Cash, long> item in response.CoinDictionary) {
+                foreach (KeyValuePair<Cash, long> item in response.ChangeDictionary) {
                     string cashType = item.Key.CashType.ToString();
-                    this.UxTxbResult.Text += String.Concat(Environment.NewLine, cashType, " ", item.Key.Name, ": " , item.Value);                  
+                    this.UxTxbResult.Text += String.Concat(Environment.NewLine, item.Value,  ": ",  cashType.ToString(), " ", item.Key.Name );                  
                 }
             }
         }

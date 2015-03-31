@@ -41,17 +41,16 @@ namespace CoinS2Machine.Core {
                         return calculateChangeResponse;
                     }
 
-                    Dictionary<long, long> calculateResult = processor.Calculate(remainingChangeAmount);
+                    List<ChangeData> changeDataList = processor.Calculate(remainingChangeAmount);
 
-                    if (calculateResult.Any() == true) {
+                    if (changeDataList.Any() == true) {
 
-                        remainingChangeAmount -= calculateResult.Sum(c => c.Key * c.Value);
+                        remainingChangeAmount -= changeDataList.Sum(c => c.UnitAmount * c.UnitCount);
 
-                        foreach (KeyValuePair<long, long> item in calculateResult) {
-                            calculateChangeResponse.CoinDictionary.Add(new Cash(item.Value, item.Key.ToString(), processor.CashType), item.Value);
+                        foreach (ChangeData changeData in changeDataList.Where(p => p.UnitCount > 0)) {
+                            calculateChangeResponse.ChangeDictionary.Add(new Cash(changeData.UnitCount, changeData.UnitAmount.ToString(), processor.CashType), changeData.UnitCount);
                         }
                     }
-
                 }
 
                 calculateChangeResponse.ChangeAmount = actualChangeResult;

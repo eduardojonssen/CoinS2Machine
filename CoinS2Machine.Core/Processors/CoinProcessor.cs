@@ -9,35 +9,18 @@ namespace CoinS2Machine.Core.Processors {
 
     public class CoinProcessor : AbstractProcessor {
 
-        public CoinProcessor() {
-            this.CashType = DataContracts.CashType.Coin;
-        }
+        public CoinProcessor() { }
+
         public override string GetName() {
             return "Coin Processor";
         }
 
         public override long[] GetAvailableValues() {
-            return new long[] { 100, 50, 25, 10, 5, 1 };
+            return new long[] { 100, 50, 25, 10, 5 };
         }
 
-        public override Dictionary<long, long> Calculate(long changeAmount) {
-
-            Dictionary<long, long> amountDictionary = new Dictionary<long,long>();
-
-            IEnumerable<long> orderedAmountList = this.GetAvailableValues().OrderByDescending(c => c);
-
-            long actualChangeAmount = changeAmount;
-
-            foreach (long amount in orderedAmountList) {
-
-                long unityCount = actualChangeAmount / amount;
-                actualChangeAmount = actualChangeAmount % amount;
-
-                amountDictionary.Add(amount, unityCount);
-            }
-
-            return amountDictionary;
-
+        public override CashType CashType {
+            get { return DataContracts.CashType.Coin; }
         }
     }
 }

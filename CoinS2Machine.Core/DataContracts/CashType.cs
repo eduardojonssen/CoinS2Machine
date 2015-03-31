@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoinS2Machine.Core.DataContracts {
     public enum CashType {
-        Coin = 0,
-        Bill = 1
+        Coin = 0 ,
+        Bill = 1 ,
+        Silver = 2 ,
+        Candy = 3
     }
 }

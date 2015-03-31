@@ -10,7 +10,7 @@ namespace CoinS2Machine.Core.DataContracts {
 
         public CalculateChangeResponse() {
 
-            this.CoinDictionary = new Dictionary<Cash, long>();
+            this.ChangeDictionary = new Dictionary<Cash, long>();
             this.OperationReportList = new List<OperationReport>();
         }
 
@@ -18,6 +18,6 @@ namespace CoinS2Machine.Core.DataContracts {
 
         public Nullable<long> ChangeAmount { get; set; }
 
-        public Dictionary<Cash, long> CoinDictionary { get; set; }
+        public Dictionary<Cash, long> ChangeDictionary { get; set; }
     }
 }

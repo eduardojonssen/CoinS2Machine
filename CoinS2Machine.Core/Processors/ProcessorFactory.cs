@@ -13,7 +13,9 @@ namespace CoinS2Machine.Core.Processors {
             // Lista de todos os processadores disponíveis.
             AbstractProcessor[] processorList = new AbstractProcessor[] {
                 new BillProcessor(),
-                new CoinProcessor()
+                new CoinProcessor(),
+                new SilverProcessor(),
+                new CandyProcessor()
 
                 // TODO: Adicionar novos processadores acima desta linha.
             };
