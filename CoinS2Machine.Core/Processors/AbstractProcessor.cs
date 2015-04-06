@@ -9,13 +9,13 @@ namespace CoinS2Machine.Core.Processors {
 
     public abstract class AbstractProcessor {
 
-        public abstract CashType CashType { get; }
-      
-        public abstract string GetName();
+        internal abstract CashType CashType { get; }
 
-        public abstract long[] GetAvailableValues();
+        internal abstract string GetName();
 
-        public virtual List<ChangeData> Calculate(long changeAmount) {
+        internal abstract long[] GetAvailableValues();
+
+        internal virtual List<ChangeData> Calculate(long changeAmount) {
 
             List<ChangeData> changeDataList = new List<ChangeData>();
 
@@ -25,14 +25,15 @@ namespace CoinS2Machine.Core.Processors {
 
             foreach (long amount in orderedAmountList) {
 
-                long unityCount = actualChangeAmount / amount;
+                long unitCount = actualChangeAmount / amount;
                 actualChangeAmount = actualChangeAmount % amount;
 
-                changeDataList.Add(new ChangeData(amount, unityCount));
+                if (unitCount > 0) {
+                    changeDataList.Add(new ChangeData(amount, unitCount));
+                }
             }
 
             return changeDataList;
         }
-
     }
 }

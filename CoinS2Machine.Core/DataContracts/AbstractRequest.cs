@@ -12,7 +12,7 @@ namespace CoinS2Machine.Core.DataContracts {
             this.ActualOperationReportList = new List<OperationReport>();
         }
 
-        public bool IsValid {
+        internal bool IsValid {
             get {
                 this.ActualOperationReportList.Clear();
                 this.Validate();
@@ -20,7 +20,7 @@ namespace CoinS2Machine.Core.DataContracts {
             }
         }
 
-        public List<OperationReport> OperationReportList {
+        internal List<OperationReport> OperationReportList {
             get {
                 return this.ActualOperationReportList.ToList();
             }

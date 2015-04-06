@@ -1,0 +1,15 @@
+﻿- Formato do nome do arquivo: NomeAplicativo.log
+
+- Salvar no diretório C:\LOGS\
+
+- Formato:
+[Data] [Nome do método que gerou essa linha] [Tipo] [Dados]
+Exemplo:
+[2015.04.06/ 19:09] [CalculateChange] [Request] [paidAmount: 100; productAmount: 50]
+
+- Fluxo: 
+1) Chegou uma requisição e precisamos gerar um arquivo de log.
+2) Verificar se já existe um arquivo de log
+	2.1) Se existe: Add informação ao log
+	2.2) Se não existe: Cria e add informação ao log
+3) Fechar o arquivo.

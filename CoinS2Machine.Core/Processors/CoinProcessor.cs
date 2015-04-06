@@ -11,15 +11,15 @@ namespace CoinS2Machine.Core.Processors {
 
         public CoinProcessor() { }
 
-        public override string GetName() {
+        internal override string GetName() {
             return "Coin Processor";
         }
 
-        public override long[] GetAvailableValues() {
+        internal override long[] GetAvailableValues() {
             return new long[] { 100, 50, 25, 10, 5 };
         }
 
-        public override CashType CashType {
+        internal override CashType CashType {
             get { return DataContracts.CashType.Coin; }
         }
     }

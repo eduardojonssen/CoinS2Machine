@@ -10,15 +10,15 @@ namespace CoinS2Machine.Core.Processors {
 
         public BillProcessor() { }
 
-        public override string GetName() {
+        internal override string GetName() {
             return "Bill Processor";
         }
 
-        public override long[] GetAvailableValues() {
+        internal override long[] GetAvailableValues() {
             return new long[] { 10000, 5000, 2000, 1000, 500, 200 };
         }
 
-        public override DataContracts.CashType CashType {
+        internal override DataContracts.CashType CashType {
             get {
                 return DataContracts.CashType.Bill;
             }
