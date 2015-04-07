@@ -56,7 +56,9 @@
   <ItemGroup>
     <Compile Include="CoinS2Machine.Core.Test\CandyProcessorTest.cs" />
     <Compile Include="CoinS2Machine.Core.Test\LoggerTest.cs" />
+    <Compile Include="CoinS2Machine.Core.Test\Mocks\ConfigurationUtilityMock.cs" />
     <Compile Include="CoinS2Machine.Core.Test\ProcessorFactoryTest.cs" />
+    <Compile Include="CoinS2Machine.Core.Test\CoinS2MachineManagerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

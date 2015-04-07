@@ -5,13 +5,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CoinS2Machine.Core.Logging;
+using CoinS2Machine.Core.Utility;
 
 namespace CoinS2Machine.Core {
     public class CoinS2MachineManager {
 
-        public CoinS2MachineManager() { }
+        public CoinS2MachineManager(IConfigurationUtility configurationUtility = null) {
+
+            this.ConfigurationUtility = configurationUtility;
+            this.Logger = new Logger(this.ConfigurationUtility.LogPath);
+        }
+
+        private IConfigurationUtility configurationUtility;
+        public IConfigurationUtility ConfigurationUtility {
+            get {
+                if (this.configurationUtility == null) { this.configurationUtility = new ConfigurationUtility(); }
+                return this.configurationUtility;
+            }
+            set { this.configurationUtility = value; }
+        }
+
+        public Logger Logger { get; set; }
 
         public CalculateChangeResponse CalculateChange(CalculateChangeRequest calculateChangeRequest) {
+
+            this.Logger.WriteLog("CalculateChange", LogType.Request, calculateChangeRequest);
 
             CalculateChangeResponse calculateChangeResponse = new CalculateChangeResponse();
 
@@ -19,6 +38,7 @@ namespace CoinS2Machine.Core {
 
                 if (calculateChangeRequest.IsValid == false) {
                     calculateChangeResponse.OperationReportList = calculateChangeRequest.OperationReportList;
+                    this.Logger.WriteLog("CalculateChange", LogType.Response, calculateChangeResponse);
                     return calculateChangeResponse;
                 }
 
@@ -38,6 +58,7 @@ namespace CoinS2Machine.Core {
                         operationReport.FieldName = null;
                         operationReport.Message = "Valor não suportado. Por favor, tente novamente mais tarde.";
                         calculateChangeResponse.OperationReportList.Add(operationReport);
+                        this.Logger.WriteLog("CalculateChange", LogType.Response, calculateChangeResponse);
                         return calculateChangeResponse;
                     }
 
@@ -57,8 +78,7 @@ namespace CoinS2Machine.Core {
 
             }
             catch (Exception ex) {
-
-                // TODO: Log da exceção.
+                this.Logger.WriteLog("CalculateChange", LogType.Error, ex.ToString());
 
                 OperationReport operationReport = new OperationReport();
 
@@ -68,8 +88,8 @@ namespace CoinS2Machine.Core {
                 calculateChangeResponse.OperationReportList.Add(operationReport);
             }
 
+            this.Logger.WriteLog("CalculateChange", LogType.Response, calculateChangeResponse);
             return calculateChangeResponse;
         }
-
     }
 }
