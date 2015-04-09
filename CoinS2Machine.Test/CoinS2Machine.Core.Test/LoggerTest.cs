@@ -1,5 +1,6 @@
 ﻿using CoinS2Machine.Core.DataContracts;
 using CoinS2Machine.Core.Logging;
+using CoinS2Machine.Test.CoinS2Machine.Core.Test.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,6 @@ namespace CoinS2Machine.Test.CoinS2Machine.Core.Test {
     public class LoggerTest {
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethod]
         public void WriteLog_SaveData() {
-
             CalculateChangeRequest calculateChangeRequest = new CalculateChangeRequest();
             calculateChangeRequest.PaidAmount = 500;
             calculateChangeRequest.ProductAmount = 300;
@@ -23,8 +23,12 @@ namespace CoinS2Machine.Test.CoinS2Machine.Core.Test {
             log.LogType = LogType.Request;
             log.LogData = calculateChangeRequest;
 
-            Logger logger = new Logger(@"C:\Logs\LogTest.log");
+            ConfigurationUtilityMock configurationUtilityMock = new ConfigurationUtilityMock();
+
+            ILog LOG = new LogFactory().Create(configurationUtilityMock);
+            Logger logger = new Logger(LOG);
             logger.WriteLog(log);
         }
     }
 }
+ 

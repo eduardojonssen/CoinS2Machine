@@ -12,5 +12,9 @@ namespace CoinS2Machine.Test.CoinS2Machine.Core.Test.Mocks {
         public string LogPath {
             get { return @"C:\Logs\LogTest.log"; }
         }
+
+        public string LogTypeName {
+            get { return "FileLog"; }
+        }
     }
 }

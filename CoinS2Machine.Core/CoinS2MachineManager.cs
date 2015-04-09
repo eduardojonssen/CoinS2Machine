@@ -13,8 +13,9 @@ namespace CoinS2Machine.Core {
 
         public CoinS2MachineManager(IConfigurationUtility configurationUtility = null) {
 
+            LogFactory logFactory = new LogFactory();
             this.ConfigurationUtility = configurationUtility;
-            this.Logger = new Logger(this.ConfigurationUtility.LogPath);
+            this.Logger = new Logger(logFactory.Create(configurationUtility));
         }
 
         private IConfigurationUtility configurationUtility;

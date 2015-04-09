@@ -51,7 +51,12 @@
     <Compile Include="DataContracts\CalculateChangeResponse.cs" />
     <Compile Include="DataContracts\CashType.cs" />
     <Compile Include="DataContracts\OperationReport.cs" />
+    <Compile Include="Logging\AbstractLog.cs" />
+    <Compile Include="Logging\EventViewerLog.cs" />
+    <Compile Include="Logging\FileLog.cs" />
+    <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\LogFactory.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="OperationResult.cs" />
     <Compile Include="Processors\AbstractProcessor.cs" />

@@ -15,5 +15,9 @@ namespace CoinS2Machine.Core.Utility {
         public string LogPath {
             get { return ConfigurationManager.AppSettings["LogPath"]; }
         }
+
+        public string LogTypeName {
+            get { return ConfigurationManager.AppSettings["LogTypeName"]; }
+        }
     }
 }
