@@ -4,17 +4,19 @@ using System;
 using System.Diagnostics;
 
 namespace CoinS2Machine.Core.Logging {
+
     public class EventViewerLog : AbstractLog, ILog {
 
         private const string source = "CoinS2Machine";
 
-        public EventViewerLog(IConfigurationUtility configurationUtility = null):base (configurationUtility) {
+        public EventViewerLog() {
         }
         
         public void WriteLog(Log log) {
             this.WriteLog(log.MethodName, log.LogType, log.LogData);
         }
 
+        
         public void WriteLog(string methodName, LogType logType, object logData) {
             string serializedData = Serializer.JsonSerialize(logData);
 

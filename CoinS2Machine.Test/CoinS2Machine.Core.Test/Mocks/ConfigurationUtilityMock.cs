@@ -13,8 +13,6 @@ namespace CoinS2Machine.Test.CoinS2Machine.Core.Test.Mocks {
             get { return @"C:\Logs\LogTest.log"; }
         }
 
-        public string LogTypeName {
-            get { return "FileLog"; }
-        }
+        public string LogTypeName { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CoinS2Machine.Core.Utility;
 using Dlp.Framework;
+using Dlp.Framework.Container;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace CoinS2Machine.Core.Logging {
     public class FileLog: AbstractLog, ILog {
-       
-        public FileLog (IConfigurationUtility configurationUtility = null):base (configurationUtility) {   }
+        public FileLog () {
+        }
 
         public void WriteLog(Log log) {
             try {

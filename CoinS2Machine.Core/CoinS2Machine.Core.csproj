@@ -51,6 +51,7 @@
     <Compile Include="DataContracts\CalculateChangeResponse.cs" />
     <Compile Include="DataContracts\CashType.cs" />
     <Compile Include="DataContracts\OperationReport.cs" />
+    <Compile Include="Interceptors\LogInterceptor.cs" />
     <Compile Include="Logging\AbstractLog.cs" />
     <Compile Include="Logging\EventViewerLog.cs" />
     <Compile Include="Logging\FileLog.cs" />

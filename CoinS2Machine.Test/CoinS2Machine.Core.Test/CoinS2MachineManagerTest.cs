@@ -5,6 +5,7 @@ using CoinS2Machine.Core;
 using CoinS2Machine.Core.DataContracts;
 using CoinS2Machine.Core.Utility;
 using CoinS2Machine.Test.CoinS2Machine.Core.Test.Mocks;
+using Dlp.Framework.Container;
 
 namespace CoinS2Machine.Test.CoinS2Machine.Core.Test {
 
@@ -14,9 +15,12 @@ namespace CoinS2Machine.Test.CoinS2Machine.Core.Test {
         [TestMethod]
         public void CalculateChange_CalculateInvalidPaidAmount_Test() {
 
-            IConfigurationUtility configurationUtility = new ConfigurationUtilityMock();
+            IocFactory.Register(
+                    Component.For<IConfigurationUtility>()
+                    .ImplementedBy<ConfigurationUtilityMock>().IsSingleton()                    
+                );
 
-            CoinS2MachineManager manager = new CoinS2MachineManager(configurationUtility);
+            CoinS2MachineManager manager = new CoinS2MachineManager();
 
             CalculateChangeRequest request = new CalculateChangeRequest();
 

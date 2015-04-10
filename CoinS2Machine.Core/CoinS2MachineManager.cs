@@ -7,24 +7,31 @@ using System.Text;
 using System.Threading.Tasks;
 using CoinS2Machine.Core.Logging;
 using CoinS2Machine.Core.Utility;
+using Dlp.Framework.Container;
+using CoinS2Machine.Core.Interceptors;
 
 namespace CoinS2Machine.Core {
     public class CoinS2MachineManager {
 
-        public CoinS2MachineManager(IConfigurationUtility configurationUtility = null) {
+        public CoinS2MachineManager() {
+
+            IocFactory.Register(
+
+                Component.For<IConfigurationUtility>()
+                    .ImplementedBy<ConfigurationUtility>().IsSingleton()
+            );
+
+            IocFactory.Register(
+                
+                Component.For<ILog>()
+                    .ImplementedBy<FileLog>("FileLog")
+                    .ImplementedBy<EventViewerLog>("EventViewerLog")
+                    .Interceptor<LogInterceptor>()
+            );
 
             LogFactory logFactory = new LogFactory();
-            this.ConfigurationUtility = configurationUtility;
-            this.Logger = new Logger(logFactory.Create(configurationUtility));
-        }
-
-        private IConfigurationUtility configurationUtility;
-        public IConfigurationUtility ConfigurationUtility {
-            get {
-                if (this.configurationUtility == null) { this.configurationUtility = new ConfigurationUtility(); }
-                return this.configurationUtility;
-            }
-            set { this.configurationUtility = value; }
+            
+            this.Logger = new Logger(logFactory.Create());
         }
 
         public Logger Logger { get; set; }
