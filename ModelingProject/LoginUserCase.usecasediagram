@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="219710d0-4c54-41c5-9fe4-5cc31233a3ae" name="LoginUserCase" linkedPackageId="8b9afb67-0fa6-4262-ad33-2c9e5e4ac928" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="69692e9e-9740-499d-ab72-a9c17813ca2c">
+      <profileInstance Id="3dc62216-fb4c-4f51-8af4-c405c4ed6167" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="278bef60-9285-491f-898d-354a3222c118">
+      <profileInstance Id="34016633-535b-4432-8054-2b68819b08ef" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="72c924a7-09cc-4605-9d93-527f8267b5a8" name="Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="96a3883b-abba-4f05-8e4e-01665f21e579" />
+        <targetEnds>
+          <association Id="681be002-bd51-483d-9d24-32b30abd6727" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Validar credenciais" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ec71dd15-ad5f-4658-9463-8e73076ebbe7" LastKnownName="Validar credenciais" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1c99ed13-c40e-4ff5-a205-99479c1b08ed" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5989f13d-7698-454f-b28d-64709f169556" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a17bd1b0-835e-4dc9-bb1c-3d31e597ef3f" name="Validar credenciais" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="618cb705-dc51-4e4e-a407-cc0e017dc7d0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="26f6370f-ca0c-485c-9a7c-3e64e33777af" />
+          </association>
+          <association Id="fcad7164-e16f-4f32-bf17-a015011f5c86" isDerived="false" sourceEndRoleName="Usuário" targetEndRoleName="Acessar dados na tela inicial" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c3af57f-83d3-4499-a035-a722135b7c19" LastKnownName="Acessar dados na tela inicial" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fda06a9d-aa27-4de6-b591-4342af76575c" name="Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="56d0357d-b4e0-465e-a247-84400c45bec9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f390d1b5-333b-4e97-9a30-f0a6b8b8a841" name="Acessar dados na tela inicial" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8c1eb541-5845-4a66-add2-3e61a6adcc08" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f6d18920-902f-4adc-a4e7-fb04d5b2d58e" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ec71dd15-ad5f-4658-9463-8e73076ebbe7" name="Validar credenciais" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="47d99e5f-4f0b-418e-b671-cf7f61f959e5" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5c3af57f-83d3-4499-a035-a722135b7c19" name="Acessar dados na tela inicial" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d93fe269-7e3e-4b93-8552-b5a489ce87df" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b5a3e535-bfa5-49c5-9045-325be154716a" name="Verificar se usuário esta bloqueado" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="66441cd3-57ac-468d-b3ae-ff87ff0b3237" />
+        <suppliersInternal>
+          <dependency Id="6a92211f-2588-45a7-b438-6a8b6d154701">
+            <useCaseMoniker Id="ec71dd15-ad5f-4658-9463-8e73076ebbe7" LastKnownName="Validar credenciais" />
+            <elementDefinition Id="61da351a-f92d-46e0-8439-a68e4be2b95a" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="8b9afb67-0fa6-4262-ad33-2c9e5e4ac928" name="ModelingProject">
+    <elementDefinition Id="fdad27e7-0c08-4810-85a7-a4f8e8e7b69e" />
+  </package>
+</useCaseModelRoot>

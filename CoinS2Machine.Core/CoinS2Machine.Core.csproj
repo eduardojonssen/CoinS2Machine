@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dlp.Framework">
-      <HintPath>..\packages\Dlp.Framework.dll.0.6.1\lib\net45\Dlp.Framework.dll</HintPath>
+    <Reference Include="Dlp.Framework, Version=0.1.5581.30010, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Dlp.Framework.dll.0.6.2\lib\net45\Dlp.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

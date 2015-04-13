@@ -16,17 +16,15 @@ namespace CoinS2Machine.Core {
         public CoinS2MachineManager() {
 
             IocFactory.Register(
-
-                Component.For<IConfigurationUtility>()
-                    .ImplementedBy<ConfigurationUtility>().IsSingleton()
+                Component.FromThisAssembly("CoinS2Machine.Core.Utility")
             );
 
             IocFactory.Register(
-                
+
                 Component.For<ILog>()
                     .ImplementedBy<FileLog>("FileLog")
                     .ImplementedBy<EventViewerLog>("EventViewerLog")
-                    .Interceptor<LogInterceptor>()
+                    .ResolveDependencies()
             );
 
             LogFactory logFactory = new LogFactory();

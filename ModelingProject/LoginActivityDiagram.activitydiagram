@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="c45d6787-ce40-4501-8f7b-289aef1ff273" name="LoginActivityDiagram" linkedPackageId="79b0af46-5405-4039-b48d-12ab54c87113" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="74cd2840-4ef4-41b0-ba08-aec1f3e4a2ec">
+      <elementDefinition Id="043da93f-e593-407a-ac80-190b7e1f37b9" />
+      <body>Cada usuário tem 3 tentativas de login</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="820daccf-8497-4f91-92f2-7a2106c476e6" LastKnownName="Verificar se existem tentativas restantes" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="a8c5178a-158b-4cff-8f51-839b4864bb02">
+      <profileInstance Id="d3da57a5-5d12-42c3-a480-9b63da59bf84" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a89836ed-207e-4685-9a99-8dff5b60a942">
+      <profileInstance Id="aa1c4384-e3b6-4884-b760-44fe2bf193b6" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="815c1aaf-7d00-4672-a6bb-0cd9b00e9d26" name="LoginActivityDiagram" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="d06155fb-60ba-4ec1-ab9f-5d494acf7987" />
+        <nodes>
+          <initialNode Id="3e1af5cf-bc8b-4442-bee1-986149bc7466" name="Initial1" isLeaf="false">
+            <elementDefinition Id="35345d48-155a-41e8-befb-cd1cdb84ee27" />
+            <flowNodeTargets>
+              <controlFlow Id="7fdc4d7c-3da6-46ea-84e7-69cd9835de9e" isLeaf="false">
+                <mergeNodeMoniker Id="72bf7437-cfd8-4ac6-9082-1aa4053e8a98" LastKnownName="Merge1" />
+                <elementDefinition Id="992d1e56-716c-4b67-ab15-3406003b037f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="71061730-fc73-4d18-b483-25b501551d58" name="Validar credenciais" isLeaf="false">
+            <elementDefinition Id="b18b843a-444e-44ad-bc9c-b49b6c3fa612" />
+            <flowNodeTargets>
+              <controlFlow Id="225d81b1-6030-4167-8d39-d65e61a6fd26" isLeaf="false">
+                <decisionNodeMoniker Id="ff00b298-a552-4e22-af10-7fe69f1d0c67" LastKnownName="Decision1" />
+                <elementDefinition Id="86f475d7-8217-42ec-af4b-f0d314876cb6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b871e040-f1f8-4f0f-98dc-c5ff5e79eb7c" name="Redirecionar para tela inicial" isLeaf="false">
+            <elementDefinition Id="1aac45e4-fb06-418d-b9da-17837b1f4036" />
+            <flowNodeTargets>
+              <controlFlow Id="37c53840-a120-42b8-a3d6-3cf4f5814615" isLeaf="false">
+                <activityFinalNodeMoniker Id="87fe70ba-235f-4bd9-9536-b702aa1ca9f5" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="8835ae40-e080-4fa3-b803-16f8d099bf05" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="87fe70ba-235f-4bd9-9536-b702aa1ca9f5" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="69f11863-1a5f-491d-a049-31a19084852e" />
+          </activityFinalNode>
+          <decisionNode Id="ff00b298-a552-4e22-af10-7fe69f1d0c67" name="Decision1" isLeaf="false">
+            <elementDefinition Id="983ffc29-b149-4925-918d-415f0440ceb0" />
+            <flowNodeTargets>
+              <controlFlow Id="1fd1f70e-aa70-4c5d-b5de-be03f0d8e99c" guard="Credenciais válidas" isLeaf="false">
+                <opaqueActionMoniker Id="b871e040-f1f8-4f0f-98dc-c5ff5e79eb7c" LastKnownName="Redirecionar para tela inicial" />
+                <elementDefinition Id="66a6cbb9-8e87-463f-9abe-cbeb30ae8150" />
+              </controlFlow>
+              <controlFlow Id="0e72fea9-0d7b-4586-bd3b-93abcd9c2b1f" guard="Credenciais inválidas" isLeaf="false">
+                <opaqueActionMoniker Id="820daccf-8497-4f91-92f2-7a2106c476e6" LastKnownName="Verificar se existem tentativas restantes" />
+                <elementDefinition Id="3908b360-aa48-4fda-a40f-e478feeba42a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="820daccf-8497-4f91-92f2-7a2106c476e6" name="Verificar se existem tentativas restantes" isLeaf="false">
+            <elementDefinition Id="a12216f9-020e-4cf8-bdd9-ef3bad3a1134" />
+            <flowNodeTargets>
+              <controlFlow Id="1dacbd9d-ebea-4245-9d5a-29169a0e50de" isLeaf="false">
+                <decisionNodeMoniker Id="0663eabd-c858-4620-b97a-ac66b38c89ba" LastKnownName="Decision2" />
+                <elementDefinition Id="14b9a4e7-63b4-4032-a4a0-d04874af0a97" />
+              </controlFlow>
+              <controlFlow Id="68ec7232-162f-4b21-ba3a-1e8392977a16" isLeaf="false">
+                <forkNodeMoniker Id="e44fd506-8e1c-4824-883d-e03c646d9571" LastKnownName="Fork1" />
+                <elementDefinition Id="6d229e87-5d7b-4baf-bd5b-a52a0e745236" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="0663eabd-c858-4620-b97a-ac66b38c89ba" name="Decision2" isLeaf="false">
+            <elementDefinition Id="dfc6a695-6352-488e-a6b9-f0f726dbfac7" />
+            <flowNodeTargets>
+              <controlFlow Id="3807e6df-816c-4b0d-8766-ee29cd3b9421" guard="Sem tentativas restantes" isLeaf="false">
+                <activityFinalNodeMoniker Id="166062b5-efe2-4420-9431-75f267936abf" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="adfd9170-ea8f-435b-9fda-9909f3b4bd65" />
+              </controlFlow>
+              <controlFlow Id="8184d1ea-eedd-4fc4-b4d3-1af642297069" guard="Existem tentativas restantes" isLeaf="false">
+                <mergeNodeMoniker Id="72bf7437-cfd8-4ac6-9082-1aa4053e8a98" LastKnownName="Merge1" />
+                <elementDefinition Id="c3932d8c-56c1-4b29-9e25-effafd701622" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="166062b5-efe2-4420-9431-75f267936abf" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="ab8f53fd-361e-4c65-adbc-b4b2cfea659b" />
+          </activityFinalNode>
+          <mergeNode Id="72bf7437-cfd8-4ac6-9082-1aa4053e8a98" name="Merge1" isLeaf="false">
+            <elementDefinition Id="a2b18223-72d3-4ca3-83f2-665283ae691e" />
+            <flowNodeTargets>
+              <controlFlow Id="98980590-7710-4bfd-8777-1cb16dc56620" isLeaf="false">
+                <opaqueActionMoniker Id="71061730-fc73-4d18-b483-25b501551d58" LastKnownName="Validar credenciais" />
+                <elementDefinition Id="b3f1a3c8-3594-4075-bc55-d86d1fca07b2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <forkNode Id="e44fd506-8e1c-4824-883d-e03c646d9571" name="Fork1" isLeaf="false">
+            <elementDefinition Id="e9a1840a-2748-40e6-8f4f-e98483170fb6" />
+            <flowNodeTargets>
+              <controlFlow Id="3437b1da-7b23-4174-913e-b4603b0ce0c3" isLeaf="false">
+                <opaqueActionMoniker Id="d4c315b8-6309-433a-b652-57b0ef4a7526" LastKnownName="Enviar email de alerta para o cliente" />
+                <elementDefinition Id="e70df0a1-f096-4477-94ac-b5ea0a103aac" />
+              </controlFlow>
+              <controlFlow Id="0f641026-0f43-4a55-9626-736f69c6f70a" isLeaf="false">
+                <opaqueActionMoniker Id="cada5f46-2d86-45ee-8693-c2699694dee5" LastKnownName="Salvar log para analise de risco" />
+                <elementDefinition Id="9f83233a-fbbb-47da-847e-595b0ab1c829" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="d4c315b8-6309-433a-b652-57b0ef4a7526" name="Enviar email de alerta para o cliente" isLeaf="false">
+            <elementDefinition Id="4e14a0b5-2b95-47dc-8163-9975095c11da" />
+          </opaqueAction>
+          <opaqueAction Id="cada5f46-2d86-45ee-8693-c2699694dee5" name="Salvar log para analise de risco" isLeaf="false">
+            <elementDefinition Id="82d1114e-a168-41c7-a3ae-fcf262304dcf" />
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="79b0af46-5405-4039-b48d-12ab54c87113" name="ModelingProject">
+    <elementDefinition Id="fdad27e7-0c08-4810-85a7-a4f8e8e7b69e" />
+  </package>
+</activityRootModel>

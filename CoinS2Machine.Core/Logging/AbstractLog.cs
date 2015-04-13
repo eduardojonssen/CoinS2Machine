@@ -12,7 +12,7 @@ namespace CoinS2Machine.Core.Logging {
 
         public AbstractLog() {
 
-            this.ConfigurationUtility = IocFactory.Resolve<IConfigurationUtility>();
+            //this.ConfigurationUtility = IocFactory.Resolve<IConfigurationUtility>();
         }
 
         public IConfigurationUtility ConfigurationUtility { get; set; }

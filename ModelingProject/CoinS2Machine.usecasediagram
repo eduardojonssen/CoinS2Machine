@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="de4b7bb9-5a08-48c0-a5d3-e85a580a7041" name="CoinS2Machine" linkedPackageId="03d54ae8-bb1c-4dd7-b1d7-8e9948f2bab7" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="f5d1c6eb-ee08-4d7d-948b-539e1844319c">
+      <profileInstance Id="92ad85db-3a42-417e-b8a3-95a3c6ea3344" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="36ce3c9d-92e6-4f93-9a8a-05d0f85279bb">
+      <profileInstance Id="d4158558-9b51-4fec-8ccf-e43cdecfe2de" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="1fec596b-670c-438c-871d-ed9e7ba11cc3" name="Buyer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ebb947e5-7a2e-4852-b7d2-f0c205727726" />
+        <targetEnds>
+          <association Id="92d37b89-2662-45b1-803f-b5289b2e9a0f" isDerived="false" sourceEndRoleName="Buyer" targetEndRoleName="Selecionar Produto" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="62246acd-9c32-4341-983e-488b4e7417c9" LastKnownName="Selecionar Produto" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="119e4cfc-7694-4519-9e60-35a9dbc94395" name="Buyer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e91f9b04-5f71-4f10-b02d-54bc88e29225" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bb1d14d7-19ee-46ca-b519-02378636a93c" name="Selecionar Produto" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b96da17a-7225-4666-801e-c90d06d7ccff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="03cb0bdd-d4f2-4971-b55d-1676f08eff4e" />
+          </association>
+          <association Id="8fbb8dd0-582f-46e2-832c-7f8e6657018f" isDerived="false" sourceEndRoleName="Buyer" targetEndRoleName="Inserir dinheiro" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c585ea60-0ed2-441a-bd75-f26f84d94d8a" LastKnownName="Inserir Moeda" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5b21b817-256d-49a1-a586-685db494598a" name="Buyer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="87965529-3176-492d-95fb-24c1b22cdeb3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9af478ed-2366-46c3-a331-a989a4111bbe" name="Inserir dinheiro" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7b5b36f1-5ca5-4f84-8a1d-fb96e05a455b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ae2f14b7-2b96-4746-8cd0-960bbc6ec159" />
+          </association>
+          <association Id="ea4036a1-f945-43fa-8847-56f82bdbeb34" isDerived="false" sourceEndRoleName="Buyer" targetEndRoleName="Receber Produto e Troco" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0d1e1029-9241-49ed-b591-2585c085f439" LastKnownName="Retirar Produto " />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c2c970a5-fa00-467d-905e-d0969fe38540" name="Buyer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="97bea00f-03ce-442d-9a45-3e9b2574f320" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7d4078f2-9634-48ed-bea4-eb7c3e6bd63d" name="Receber Produto e Troco" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="23c7f469-6a87-4413-8349-392bb5e85343" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b84af73e-9e3c-40f0-b6b2-8f0ab0cb9e10" />
+          </association>
+          <association Id="c89bbb70-4f8d-40ea-9faf-7f9a51d2a49b" isDerived="false" sourceEndRoleName="Buyer" targetEndRoleName="Retirar Troco" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e6239fcb-1a74-49a8-af74-ae505d6baec7" LastKnownName="Retirar Troco" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f5120837-f669-490c-9678-aa0cc3ed72b3" name="Buyer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="105ed0da-3624-4025-927e-b6cac606c6e7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="edca2f67-f38b-4a12-9124-9ae06dbc0cb5" name="Retirar Troco" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4548ed80-1de2-4d88-b0f8-5c29feaebfb4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="53b0b35d-c59f-49c4-9398-415375f85d0c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="62246acd-9c32-4341-983e-488b4e7417c9" name="Selecionar Produto" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="32d54986-f879-4ae7-b83d-a2217eb4e948" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c585ea60-0ed2-441a-bd75-f26f84d94d8a" name="Inserir Moeda" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e90185f2-20ee-414a-8ed1-d556d93ad075" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a1c354c2-d013-4ae1-9a1d-93616434d13f" name="Validar Nota" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="de9fa930-831c-440f-a597-5b91345cf826" />
+        <suppliersInternal>
+          <dependency Id="17646093-bbac-4b96-9cb8-85abbca3a9ee">
+            <useCaseMoniker Id="c585ea60-0ed2-441a-bd75-f26f84d94d8a" LastKnownName="Inserir Moeda" />
+            <elementDefinition Id="963c5998-4967-473b-bc34-b74d307fe81a" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0d1e1029-9241-49ed-b591-2585c085f439" name="Retirar Produto " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0a227d1a-c32e-4dce-a15d-f3640ddb84a0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e6239fcb-1a74-49a8-af74-ae505d6baec7" name="Retirar Troco" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ee5a054c-c229-4c09-a910-e78922419fc4" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="eb466ba1-b030-4a71-8b59-f5d5e180e2d9" name="Calcular Troco" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="26086285-44bb-4a2a-8509-64e28eb80bc6" />
+        <suppliersInternal>
+          <dependency Id="f4b14ee3-74bd-411d-b2af-11af1e6d575b">
+            <useCaseMoniker Id="e6239fcb-1a74-49a8-af74-ae505d6baec7" LastKnownName="Retirar Troco" />
+            <elementDefinition Id="5961d842-adff-42ec-956c-ba099f00c724" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="87dfbd81-c0b1-451b-a053-dc1759a048b6" name="Verificar estoque produto" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dd6c37cb-59c4-44b6-b943-015528a7bbb9" />
+        <suppliersInternal>
+          <dependency Id="65253630-1b13-45ba-8c5e-183064cff977">
+            <useCaseMoniker Id="62246acd-9c32-4341-983e-488b4e7417c9" LastKnownName="Selecionar Produto" />
+            <elementDefinition Id="9ab00279-bf80-4a08-bce2-9f6b12f2da8c" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a5f4d6d2-074e-42f6-b1c1-803a6c78c0af" name="Separar Moedas" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8f131662-b6f2-4b40-b5d9-ffaebb59d195" />
+        <suppliersInternal>
+          <dependency Id="6fb01afc-faef-4598-8607-bf3fed3e6a8b">
+            <useCaseMoniker Id="e6239fcb-1a74-49a8-af74-ae505d6baec7" LastKnownName="Retirar Troco" />
+            <elementDefinition Id="2e8c5da6-8405-4d16-bc11-62e86e7b4944" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="03d54ae8-bb1c-4dd7-b1d7-8e9948f2bab7" name="ModelingProject">
+    <elementDefinition Id="fdad27e7-0c08-4810-85a7-a4f8e8e7b69e" />
+  </package>
+</useCaseModelRoot>
