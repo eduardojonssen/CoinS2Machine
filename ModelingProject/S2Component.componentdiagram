@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="b29f071b-59c4-48bf-a61d-81aaa657672f" name="S2Component" linkedPackageId="1780df49-ac3d-44e4-a2c1-c3bc47f17115" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="e16b21b5-567c-4d14-84e2-697d5ae689d7">
+      <profileInstance Id="dc5fdfc2-b19e-4db4-a2fe-ddb3a4445124" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="ecb06ed0-9db5-4a30-8cb6-543d0c40b6bd">
+      <profileInstance Id="c7e09fe0-aa15-4429-82b2-e24f0638bca4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="516e67b1-779f-47ca-adeb-0273e04c6e49" name="Portal MVC" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eeab78ff-4ee9-4154-a9a9-732e2432ac3b" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="dc4dc372-c94e-4c40-9c5a-40764904ff11" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="e9a88976-3f2d-4af3-b77f-9afd830481ae" />
+            <suppliersInternal>
+              <dependency Id="1721797e-9007-4f0f-b0b7-3a00b3f40d38" name="NET.TCP">
+                <providedInterfaceMoniker Id="2c86f30f-bf50-4e46-ba17-41d0f0d4d912" LastKnownName="Port1" />
+                <elementDefinition Id="b44a68a4-e967-4103-8a93-dcc27007f974" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="be905155-3835-40b3-ba8b-6b625bd8e0ef" LastKnownName="IMerchantManager" />
+            </type_NamedElement>
+          </requiredInterface>
+          <part Id="0371a003-5597-41ea-9d27-93fb4bcf4c6b" name="WebAPI" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="b7c08c23-db47-4a66-adae-7bb7373e6319" />
+            <type_NamedElement>
+              <componentMoniker Id="c4e99efd-56f1-4e32-a04a-c3137b0a4bfc" LastKnownName="Component2" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="30e56db4-b118-473c-908e-039ba5c31ba0" name="Serviço WCF" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c6387931-8b74-4564-ba30-b2e3729c4a15" />
+        <suppliersInternal>
+          <dependency Id="6ce57a45-63c0-4c4d-8eed-cf407068952e">
+            <componentMoniker Id="733ca4cf-d56b-438b-a520-806d9f59a90e" LastKnownName="DB Membership" />
+            <elementDefinition Id="bba75be3-f934-416d-bed0-3abcb7c22ef5" />
+          </dependency>
+          <dependency Id="fc878ddf-1c12-46d4-863d-e66b06b93a33">
+            <componentMoniker Id="ffe6153b-f235-47a2-b09f-c790f9931eb1" LastKnownName="DB Buy4" />
+            <elementDefinition Id="9a759d42-4fc5-4114-b45f-32c4cf70c3a2" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <providedInterface Id="2c86f30f-bf50-4e46-ba17-41d0f0d4d912" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="4d6bf081-adf0-4f79-bbee-6d1c431d706e" />
+            <type_NamedElement>
+              <interfaceMoniker Id="5acddaca-a4ad-4cb8-8922-0b29f7265ef5" LastKnownName="IMerchantManager" />
+            </type_NamedElement>
+          </providedInterface>
+          <providedInterface Id="4e5f7765-159f-46e4-bb05-37594242ef95" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="73b44775-71eb-424c-a4ff-e82efda49cbe" />
+            <type_NamedElement>
+              <interfaceMoniker Id="7f496fcf-5836-4620-a37a-10069efe9c77" LastKnownName="ITransaction" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="733ca4cf-d56b-438b-a520-806d9f59a90e" name="DB Membership" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="66f7caf6-1e99-40cb-a5b4-586513367870" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="ffe6153b-f235-47a2-b09f-c790f9931eb1" name="DB Buy4" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="295a35e2-e90a-4488-a556-6c892e6c4c33" />
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="5acddaca-a4ad-4cb8-8922-0b29f7265ef5" name="IMerchantManager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f64b779e-f302-4d8b-a03c-b1dba0a5c88d" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="be905155-3835-40b3-ba8b-6b625bd8e0ef" name="IMerchantManager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2a7a7a32-890e-4cfd-9859-fd568336df90" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="7f496fcf-5836-4620-a37a-10069efe9c77" name="ITransaction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="73d68460-9cde-4efa-af7d-49e41c2a90db" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="c4e99efd-56f1-4e32-a04a-c3137b0a4bfc" name="Component2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="625785c3-fd83-4086-93ca-40589ede7f4c" />
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="1780df49-ac3d-44e4-a2c1-c3bc47f17115" name="ModelingProject">
+    <elementDefinition Id="fdad27e7-0c08-4810-85a7-a4f8e8e7b69e" />
+  </package>
+</componentModel>

@@ -22,6 +22,33 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="ModelDefinition\Package_1936.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1958.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="S2Class.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="S2Class.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>S2Class.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="S2Component.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="S2Component.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>S2Component.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="S2Sequence.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="S2Sequence.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>S2Sequence.sequencediagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="CoinS2Machine.activitydiagram">
       <SubType>Content</SubType>
