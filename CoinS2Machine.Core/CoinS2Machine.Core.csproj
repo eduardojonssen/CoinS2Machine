@@ -60,7 +60,6 @@
     <Compile Include="Logging\Log.cs" />
     <Compile Include="Logging\LogFactory.cs" />
     <Compile Include="Logging\Logger.cs" />
-    <Compile Include="OperationResult.cs" />
     <Compile Include="Processors\AbstractProcessor.cs" />
     <Compile Include="Processors\BillProcessor.cs" />
     <Compile Include="Processors\CandyProcessor.cs" />
@@ -69,6 +68,7 @@
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Processors\SilverProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\LogRepository.cs" />
     <Compile Include="Utility\ConfigurationUtility.cs" />
     <Compile Include="Utility\IConfigurationUtility.cs" />
   </ItemGroup>

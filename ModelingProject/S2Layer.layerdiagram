@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="582bff79-cd30-4e71-8a5b-59fe48012e0c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="d67f1974-c551-472e-9b43-9182f5d2d408" name="Interface">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f07e74ef-6ea3-4a7c-ab3a-c8664edc18dc" direction="Forward">
+          <layerMoniker Id="bd9a7fb9-76b4-4f17-9b53-8b1ee051725f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="aad1e119-da44-48e3-be35-adc172c51bd3" name="CoinS2Machine">
+          <ArtifactNode Label="CoinS2Machine" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine/CoinS2Machine.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine)" Label="CoinS2Machine.exe" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.exe" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="bd9a7fb9-76b4-4f17-9b53-8b1ee051725f" name="Core">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="63cd9f10-ecd2-4e65-81a4-4cd3c1eddbba" direction="Forward">
+          <layerMoniker Id="0ccc2637-3467-48b7-9803-345e91d162ae" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="9d642970-ba78-4e02-bc64-fad99244ec75" direction="Forward">
+          <layerMoniker Id="0204d041-95fc-41fe-976d-832c301bc665" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="fd43c722-e8a4-48dc-9a14-1d49d1e6e7ef" direction="Forward">
+          <layerMoniker Id="2e1aab01-d768-474d-a3e4-c810012df708" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="86f54ab2-ba88-4406-8a7d-a346957077c5" direction="Bidirectional">
+          <layerMoniker Id="1ff2139d-4a39-44fa-ad45-9e98168a3f38" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="7ac8863f-1144-41fc-8045-dd7ec7bd9988" name="DataContracts">
+          <ArtifactNode Label="DataContracts" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/CoinS2Machine.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/DataContracts/&quot;)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.DataContracts Type=AbstractRequest)" Label="AbstractRequest" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.DataContracts Type=CalculateChangeRequest)" Label="CalculateChangeRequest" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.DataContracts Type=CalculateChangeResponse)" Label="CalculateChangeResponse" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.DataContracts Type=Cash)" Label="Cash" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.DataContracts Type=CashType)" Label="CashType" Category="CodeSchema_Enum">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.DataContracts Type=OperationReport)" Label="OperationReport" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="fa3338d5-e453-48f9-82ba-a5a0f79d7422" name="CoinS2MachineManager.cs">
+          <ArtifactNode Label="CoinS2MachineManager.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/CoinS2Machine.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/CoinS2MachineManager.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core Type=CoinS2MachineManager)" Label="CoinS2MachineManager" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="0ccc2637-3467-48b7-9803-345e91d162ae" name="Log">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f679ca5b-57ef-4948-82c9-99305fdeb157" direction="Forward">
+          <layerMoniker Id="5273b436-76db-47ee-8637-7098ec06169a" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="f35d8740-2b2f-46dd-b290-e2d371da52a9" direction="Forward">
+          <layerMoniker Id="2e1aab01-d768-474d-a3e4-c810012df708" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="46791aa0-29fb-4035-b1ac-88686d6d480a" direction="Forward">
+          <layerMoniker Id="0204d041-95fc-41fe-976d-832c301bc665" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="f8610dc3-9759-4127-a396-b64abefe14b2" name="Logging">
+          <ArtifactNode Label="Logging" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/CoinS2Machine.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/Logging/&quot;)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Logging Type=AbstractLog)" Label="AbstractLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Logging Type=EventViewerLog)" Label="EventViewerLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Logging Type=FileLog)" Label="FileLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Logging Type=ILog)" Label="ILog" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Logging Type=Log)" Label="Log" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Logging Type=LogFactory)" Label="LogFactory" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Logging Type=Logger)" Label="Logger" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Logging Type=LogType)" Label="LogType" Category="CodeSchema_Enum">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="1ff2139d-4a39-44fa-ad45-9e98168a3f38" name="Processor">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3d513fa4-5be6-4e57-89dd-cbef9ee57f4a" direction="Forward">
+          <layerMoniker Id="0204d041-95fc-41fe-976d-832c301bc665" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="4a7ab97d-0915-4b4d-a031-0144c6f8922c" name="Processors">
+          <ArtifactNode Label="Processors" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/CoinS2Machine.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/Processors/&quot;)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Processors Type=AbstractProcessor)" Label="AbstractProcessor" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Processors Type=BillProcessor)" Label="BillProcessor" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Processors Type=CandyProcessor)" Label="CandyProcessor" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Processors Type=ChangeData)" Label="ChangeData" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Processors Type=CoinProcessor)" Label="CoinProcessor" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Processors Type=ProcessorFactory)" Label="ProcessorFactory" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Processors Type=SilverProcessor)" Label="SilverProcessor" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="5273b436-76db-47ee-8637-7098ec06169a" name="Repository">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="069d1b88-921c-427f-8e03-5bc101fbcf29" direction="Forward">
+          <layerMoniker Id="e397e791-35e9-4b71-a413-db7a5eaee4eb" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="01efadd0-82b0-49a7-a576-740afa5589b0" direction="Forward">
+          <layerMoniker Id="0204d041-95fc-41fe-976d-832c301bc665" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="b55bc590-0f16-46fe-8f61-e62b4782712a" direction="Forward">
+          <layerMoniker Id="2e1aab01-d768-474d-a3e4-c810012df708" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="6d129c6a-0fb1-4b99-8ae4-624683193b6a" name="Repository">
+          <ArtifactNode Label="Repository" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/CoinS2Machine.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/Repository/&quot;)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Repository Type=LogRepository)" Label="LogRepository" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="2e1aab01-d768-474d-a3e4-c810012df708" name="Utility">
+      <references>
+        <reference Id="e6989fb8-0ecd-4832-9a98-8758e3559f77" name="Utility">
+          <ArtifactNode Label="Utility" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/CoinS2Machine.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CoinS2Machine/CoinS2Machine.Core/Utility/&quot;)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Utility Type=ConfigurationUtility)" Label="ConfigurationUtility" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CoinS2Machine.Core Namespace=CoinS2Machine.Core.Utility Type=IConfigurationUtility)" Label="IConfigurationUtility" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="e397e791-35e9-4b71-a413-db7a5eaee4eb" name="DB" />
+    <layer Id="0204d041-95fc-41fe-976d-832c301bc665" name="DLP.Framework" />
+  </layers>
+</layerModel>

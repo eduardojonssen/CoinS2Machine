@@ -82,4 +82,38 @@
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Validate Include="S2Layer.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="S2Layer.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>S2Layer.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="S2Layer.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>S2Layer.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="S3Layer.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="S3Layer.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>S3Layer.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="S3Layer.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>S3Layer.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoinS2Machine.Core\CoinS2Machine.Core.csproj">
+      <Name>CoinS2Machine.Core</Name>
+      <Project>{a81e6c3a-709f-4eaa-98a7-39229d696af0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinS2Machine\CoinS2Machine.csproj">
+      <Name>CoinS2Machine</Name>
+      <Project>{7b51021e-e2c8-4979-a410-18d92b17686e}</Project>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

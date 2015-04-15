@@ -1,6 +1,7 @@
 ﻿using CoinS2Machine.Core;
 using CoinS2Machine.Core.DataContracts;
 using CoinS2Machine.Core.Processors;
+using CoinS2Machine.Core.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
